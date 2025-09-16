@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Question</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #1a1a1a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .main-container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        .question {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            color: #cccccc;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .btn {
+            background: #333;
+            color: white;
+            border: 2px solid #555;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 100px;
+        }
+
+        .btn:hover {
+            background: #444;
+            border-color: #666;
+        }
+
+        .btn:active {
+            transform: translateY(1px);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            
+            .btn {
+                width: 200px;
+            }
+            
+            #challenge-screen img {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div id="initial-screen">
+            <div class="question">
+                Apakah Anda ingin melanjutkan?
+            </div>
+            
+            <div class="buttons">
+                <button class="btn" onclick="showChallenge()">Yes</button>
+                <button class="btn" onclick="showNo()">No</button>
+            </div>
+        </div>
+
+        <div id="challenge-screen" class="hidden">
+            <img src="HEH KAMU HEKER.png" alt="Challenge Image" style="max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+        </div>
+    </div>
+
+    <script>
+        function showChallenge() {
+            document.getElementById('initial-screen').classList.add('hidden');
+            document.getElementById('challenge-screen').classList.remove('hidden');
+        }
+
+        function showNo() {
+            alert('Terima kasih!');
+        }
+    </script>
+</body>
+</html>
